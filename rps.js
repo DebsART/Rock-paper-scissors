@@ -5,7 +5,7 @@ return choice[Math.floor(Math.random() * choice.length)];
 }
 
 let playerSelection = prompt('make your choice?');
-playerSelection = playerSelection;
+playerSelection = playerSelection.toLowerCase();
 let computerSelection = getComputerChoice();
 function game1(playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == 'paper'){
