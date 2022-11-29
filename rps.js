@@ -30,12 +30,10 @@ function game(playerScore, computerScore) {
         let gameRound = playRound(playerSelection, computerSelection);
         return gameRound
        
-        if (playerScore > computerScore) {
+        if (playerScore = 5) {
             return 'You win! Game over!'
-        } if (computerScore > playerScore) {
+        } if (computerScore = 5) {
             return 'Computer win! Game over!'
-        } if (computerScore == playerScore) {
-           return 'Tie! Game over!'
         }
     }
 }
