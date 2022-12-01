@@ -16,36 +16,39 @@ let scissors = document.querySelector("#scissors");
 
 rock.addEventListener('click', () =>{
     playerSelection = "rock";
+    playRound(playerSelection, computerSelection);
 });
 
 paper.addEventListener('click', () =>{
     playerSelection = "paper";
+    playRound(playerSelection, computerSelection);
 });
 
 scissors.addEventListener('click', () =>{
     playerSelection = "scissors";
+    playRound(playerSelection, computerSelection);
 });
 
 const playerScr = document.querySelector("#playerScore");
 const computerScr = document.querySelector("#computerScore");
 
 
-const results = document.querySelector(".results");
+const results = document.querySelector("#results");
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == 'paper'){
-        results.textContent = 'You lose! Paper beats rock! Computer wins!';
+        results.textContent = "You lose! Paper beats rock! Computer wins!";
         ++computerScore;
         computerScr.textContent = `Computer score : ${computerScore}`;
         playerScr.textContent = `Player score : ${playerScore}`;
 
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        results.textContent =  'You lose! rock beats paper! Computer wins!'
+        results.textContent =  "You lose! rock beats paper! Computer wins!";
         ++computerScore;
         computerScr.textContent = `Computer score : ${computerScore}`;
         playerScr.textContent = `Player score : ${playerScore}`;
 
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-        results.textContent =  'You lose! scissors beats paper! Computer wins!'
+        results.textContent =  "You lose! scissors beats paper! Computer wins!";
         ++computerScore;
         computerScr.textContent = `Computer score : ${computerScore}`;
         playerScr.textContent = `Player score : ${playerScore}`;
@@ -54,7 +57,7 @@ function playRound(playerSelection, computerSelection) {
         results.textContent =  "A tie! Try again! No scores allocated";
 
     } else{
-        results.textContent =  'You win! great choice!'
+        results.textContent =  "You win! great choice!";
         ++playerScore;
         computerScr.textContent = `Computer score : ${computerScore}`;
         playerScr.textContent = `Player score : ${playerScore}`;   
@@ -63,10 +66,10 @@ function playRound(playerSelection, computerSelection) {
 };
 
 
-function game(playerScore, computerScore) {
+function startGame() {
     for(let i=0; i<5; i++) {
-        let gameRound = playRound(playerSelection, computerSelection);
-        return gameRound
+        playRound(playerSelection, computerSelection);
+        
         const finalResults = document.querySelector("finalResults");
 
         if (playerScore = 5) {
@@ -77,7 +80,4 @@ function game(playerScore, computerScore) {
     }
 }
 
-playerScr.textContent = `Player score : ${playerScore}`;
-        
-computerScr.textContent = `Computer score : ${computerScore}`;
-       
+      
