@@ -16,17 +16,17 @@ let scissors = document.querySelector("#scissors");
 
 rock.addEventListener('click', () =>{
     playerSelection = "rock";
-    playRound(playerSelection, computerSelection);
+    startGame();
 });
 
 paper.addEventListener('click', () =>{
     playerSelection = "paper";
-    playRound(playerSelection, computerSelection);
+    startGame();
 });
 
 scissors.addEventListener('click', () =>{
     playerSelection = "scissors";
-    playRound(playerSelection, computerSelection);
+    startGame();
 });
 
 const playerScr = document.querySelector("#playerScore");
@@ -65,17 +65,18 @@ function playRound(playerSelection, computerSelection) {
 
 };
 
-
 function startGame() {
-    for(let i=0; i<5; i++) {
+    while(playerScore<5 || computerScore<5) {
+        getComputerChoice();
         playRound(playerSelection, computerSelection);
+        
         
         const finalResults = document.querySelector("finalResults");
 
-        if (playerScore = 5) {
-            finalResults.textContent = 'You win! Game over!'
-        } if (computerScore = 5) {
-            finalResults.textContent = 'Computer win! Game over!'
+        if (playerScore == 5) {
+            finalResults.textContent = "You win! Game over!";
+        } if (computerScore == 5) {
+            finalResults.textContent = "Computer win! Game over!";
         }
     }
 }
