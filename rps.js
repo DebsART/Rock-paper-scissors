@@ -8,54 +8,76 @@ let computerSelection = getComputerChoice();
 let playerScore = 0;
 let computerScore = 0;
 
-let rock = document.querySelector("button.rock");
-let paper = document.querySelector("button.paper");
-let scissors = document.querySelector("button.scissors");
 
-let playerSelection = () => {
-rock.addEventListener("click", (function(){
-    console.log('rock');
-    playRound();
-}));
-paper.addEventListener("click", (function(){
-    console.log('paper');
-    playRound();
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
 
-}));
-scissors.addEventListener("click", (function(){
-    console.log('scissors');
-    playRound();
-}));
-}
 
+rock.addEventListener('click', () =>{
+    playerSelection = "rock";
+});
+
+paper.addEventListener('click', () =>{
+    playerSelection = "paper";
+});
+
+scissors.addEventListener('click', () =>{
+    playerSelection = "scissors";
+});
+
+const playerScr = document.querySelector("#playerScore");
+const computerScr = document.querySelector("#computerScore");
+
+
+const results = document.querySelector(".results");
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock' && computerSelection == 'paper'){
-        return 'You lose! paper beats rock!' + ' Computer scores ' + ++computerScore + '!' + ' Your score in this round is ' + playerScore
+        results.textContent = 'You lose! Paper beats rock! Computer wins!';
+        ++computerScore;
+        computerScr.textContent = `Computer score : ${computerScore}`;
+        playerScr.textContent = `Player score : ${playerScore}`;
+
     } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-        return 'You lose! rock beats scissors!' + ' Computer scores ' + ++computerScore  + '!' + ' Your score in this round is ' + playerScore
+        results.textContent =  'You lose! rock beats paper! Computer wins!'
+        ++computerScore;
+        computerScr.textContent = `Computer score : ${computerScore}`;
+        playerScr.textContent = `Player score : ${playerScore}`;
+
     } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
-       return 'You lose! scissors beats paper!' + ' Computer scores ' + ++computerScore + '!' + ' Your score in this round is ' + playerScore
+        results.textContent =  'You lose! scissors beats paper! Computer wins!'
+        ++computerScore;
+        computerScr.textContent = `Computer score : ${computerScore}`;
+        playerScr.textContent = `Player score : ${playerScore}`;
+   
     } else if (playerSelection == computerSelection){
-        return 'A tie! Try again! No scores allocated'
+        results.textContent =  "A tie! Try again! No scores allocated";
+
     } else{
-        return 'You win! great choice! Your Score in this round is ' + ++playerScore
-    }
-}
+        results.textContent =  'You win! great choice!'
+        ++playerScore;
+        computerScr.textContent = `Computer score : ${computerScore}`;
+        playerScr.textContent = `Player score : ${playerScore}`;   
+     }
+
+};
 
 
 function game(playerScore, computerScore) {
     for(let i=0; i<5; i++) {
-        playerSelection = prompt('make your choice?');
         let gameRound = playRound(playerSelection, computerSelection);
         return gameRound
-       
+        const finalResults = document.querySelector("finalResults");
+
         if (playerScore = 5) {
-            return 'You win! Game over!'
+            finalResults.textContent = 'You win! Game over!'
         } if (computerScore = 5) {
-            return 'Computer win! Game over!'
+            finalResults.textContent = 'Computer win! Game over!'
         }
     }
 }
 
+playerScr.textContent = `Player score : ${playerScore}`;
         
+computerScr.textContent = `Computer score : ${computerScore}`;
        
