@@ -13,6 +13,7 @@ function getComputerChoice() {
     let paper = document.querySelector("#paper");
     let scissors = document.querySelector("#scissors");
     
+    
     rock.addEventListener('click', () =>{
         playerSelection = "rock";
         startGame();
@@ -27,6 +28,8 @@ function getComputerChoice() {
         playerSelection = "scissors";
         startGame();
     });
+
+    
 
     const playerScr = document.querySelector("#playerScore");
     const computerScr = document.querySelector("#computerScore");
@@ -76,6 +79,7 @@ function getComputerChoice() {
             rock.setAttribute("disabled", 1);
             paper.setAttribute("disabled", 1);
             scissors.setAttribute("disabled", 1);
+            playAgain.style.display="block";    
             }
         };
 
@@ -83,12 +87,24 @@ function getComputerChoice() {
             playerScore = 0;
             computerScore = 0;
 
+            finalResults.textContent = " ";
+            results.textContent = " ";
+
             computerScr.textContent = `Computer score : ${computerScore}`;
             playerScr.textContent = `Player score : ${playerScore}`;   
 
-            rock.removeAttribute("disabled", 1);
-            paper.setAttribute("disabled", 1);
-            scissors.setAttribute("disabled", 1);
+            rock.removeAttribute("disabled");
+            paper.removeAttribute("disabled");
+            scissors.removeAttribute("disabled");
 
-        }
+        };
+        const playAgain = document.querySelector("#playAgain");
+        playAgain.style.display="none";    
+        playAgain.setClickable="false";
+        const para = document.querySelector("#para");
+        playAgain.addEventListener('click', () =>{
+            endGame();
+        });
+
+
         
