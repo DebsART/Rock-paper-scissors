@@ -96,7 +96,7 @@ function getComputerChoice() {
             rock.removeAttribute("disabled");
             paper.removeAttribute("disabled");
             scissors.removeAttribute("disabled");
-
+            playAgain.style.display="none";    
         };
         const playAgain = document.querySelector("#playAgain");
         playAgain.style.display="none";    
