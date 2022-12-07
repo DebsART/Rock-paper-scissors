@@ -2,7 +2,7 @@ body {
     justify-content: center;
     align-items: center;
     background: url(images/before\ \(3\).png), url(images/background6.jpeg);
-    background-size: 1000px, 1700px ;
+    background-size: 1000px, 1820px ;
     background-repeat: no-repeat;
     background-position: bottom;
     position: relative, absolute;
@@ -16,8 +16,8 @@ body {
     font-family: fantasy;  
     font-size: 50px;
     font-weight:900;
-    color:darkgreen;
-    text-shadow: 1px 1px white, 1px 2px 32px gold;
+    color:yellow;
+    text-shadow: 1px 1px yellowgreen, 1px 2px 32px yellow;
     
 }
 .buttons {
@@ -26,6 +26,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     border-radius: 50%;
+    margin-top: -10px;
 }
 
 
@@ -94,7 +95,7 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 120px;
 }
 
 .scoring {
@@ -111,6 +112,7 @@ body {
     align-items: center;
     margin-top: 60px;
 }
+
 
 img {
   height:290px;
@@ -129,16 +131,15 @@ img {
     height: 50px;
     width:200px;
     font-size: 20px;
-    position: relative;
-    display: inline-block;
+    z-index: 9999;
+    vertical-align: middle;
+    box-shadow: 3px;
+    box-shadow: 3px 3px 32px white;
+    font-family: fantasy;
+    color: orange;
 }
 
-#playAgain:hover {
-    opacity: 0.6;
-    box-shadow: 3px;
-    position: relative;
-    color: beige;
-}
+
 
 
 

@@ -72,19 +72,26 @@ function getComputerChoice() {
     
     };
     
-    let i =  0;
+    let audio = new Audio("One-Bard-Band.mp3");
+
+   
+
+    let i = 0;
+    let mySound
     function startGame() {
         if(i !== 5) {
             let computerSelection = getComputerChoice();
             playRound(playerSelection, computerSelection);
-        };
+            audio.play();       
+     };
          if (playerScore == 5 || computerScore == 5){
             finalResults = document.querySelector("#finalResults");
             finalResults.textContent = `Game Over! Player scores ${playerScore}! Computer scores ${computerScore}!`;
             rock.setAttribute("disabled", 1);
             paper.setAttribute("disabled", 1);
             scissors.setAttribute("disabled", 1);
-            playAgain.style.display="block";    
+            playAgain.style.display="block";  
+            audio.pause();  
             }
         };
  
@@ -111,5 +118,3 @@ function getComputerChoice() {
             endGame();
         });
 
-
-        
