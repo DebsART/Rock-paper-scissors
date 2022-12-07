@@ -34,32 +34,37 @@ function getComputerChoice() {
     const playerScr = document.querySelector("#playerScore");
     const computerScr = document.querySelector("#computerScore");
     
-    
+    computerChoosing = document.querySelector("#computerChoosing");
     const results = document.querySelector("#results");
     function playRound(playerSelection, computerSelection) {
         if (playerSelection == 'rock' && computerSelection == 'paper'){
+            computerChoosing.textContent = `Computer picks ${computerSelection}`;
             results.textContent = "You lose! Paper beats rock! Computer wins!";
             ++computerScore;
             computerScr.textContent = `Computer score : ${computerScore}`;
             playerScr.textContent = `Player score : ${playerScore}`;
     
         } else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-            results.textContent =  "You lose! rock beats paper! Computer wins!";
+            computerChoosing.textContent = `Computer picks ${computerSelection}`;
+            results.textContent =  "You lose! rock beats scissors! Computer wins!";
             ++computerScore;
             computerScr.textContent = `Computer score : ${computerScore}`;
             playerScr.textContent = `Player score : ${playerScore}`;
     
         } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
+            computerChoosing.textContent = `Computer picks ${computerSelection}`;
             results.textContent =  "You lose! scissors beats paper! Computer wins!";
             ++computerScore;
             computerScr.textContent = `Computer score : ${computerScore}`;
             playerScr.textContent = `Player score : ${playerScore}`;
        
         } else if (playerSelection == computerSelection){
+            computerChoosing.textContent = `Computer picks ${computerSelection}`;
             results.textContent =  "A tie! Try again! No scores allocated";
     
         } else{
             results.textContent =  "You win! great choice!";
+            computerChoosing.textContent = `Computer picks ${computerSelection}`;
             ++playerScore;
             computerScr.textContent = `Computer score : ${computerScore}`;
             playerScr.textContent = `Player score : ${playerScore}`;   
@@ -82,7 +87,7 @@ function getComputerChoice() {
             playAgain.style.display="block";    
             }
         };
-
+ 
         function endGame() {
             playerScore = 0;
             computerScore = 0;

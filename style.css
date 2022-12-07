@@ -1,3 +1,172 @@
+body {
+    justify-content: center;
+    align-items: center;
+    background: url(images/before\ \(3\).png), url(images/background6.jpeg);
+    background-size: 1000px, 1700px ;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: relative, absolute;
+    z-index: 1, -1;
+}
+
+
+
 #instructions {
+    text-align: center;
+    font-family: fantasy;  
+    font-size: 50px;
+    font-weight:900;
+    color:darkgreen;
+    text-shadow: 1px 1px white, 1px 2px 32px gold;
     
+}
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+#rock {
+    transform: rotate(10deg);
+    position: relative;
+    background-color: transparent;
+    border: none;
+    margin-right: 80px;
+    opacity: 0.8;
+}
+
+#rock:hover {
+    transform: scale(1.3);
+    box-shadow: 3px;
+    opacity: 2;
+    z-index: 9999;
+    opacity: 2;
+    transition: 0.5s;
+    filter:brightness(110%)
+
+}
+
+#paper:hover {
+    transform: scale(1.3);
+    box-shadow: 3px;
+    opacity: 2;
+    z-index: 9999;
+    opacity: 2;
+    transition: 0.5s;
+    filter:brightness(105%)
+}
+
+#scissors:hover {
+    transform: scale(1.3);
+    box-shadow: 3px;
+    opacity: 2;
+    z-index: 9999;
+    opacity: 2;
+    transition: 0.5s;
+    filter:brightness(120%)
+
+}
+
+#scissors {
+    transform: rotate(130deg);
+    position: relative;
+    background-color: transparent;
+    border: none;
+    margin-left: 70px;
+    opacity: 0.7;
+    margin-top: 30px;
+}
+
+#paper {
+    margin-top: 100px;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    opacity: 0.7;
+    margin-left: 20px;
+}
+
+.gameBody {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.scoring {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.announcements {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+img {
+  height:290px;
+  width:240px;  
+}
+
+#playAgain {
+    margin-top: -20px;
+}
+
+#playerScore {
+   margin-top: -10px;
+}
+
+#playAgain {
+    height: 50px;
+    width:200px;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+#playAgain:hover {
+    opacity: 0.6;
+    box-shadow: 3px;
+    position: relative;
+    color: beige;
+}
+
+
+
+#computerChoosing {
+    font-size: 20px;
+    text-align: center;
+    font-family: fantasy;
+    color: white;
+    text-shadow: 1px 2px 32px gold;
+}
+
+#results {
+    font-family: fantasy;
+    color: white;
+    text-shadow: 1px 2px 32px gold;
+}
+#finalResults {
+    font-family: fantasy;
+    color: white;
+    text-shadow: 1px 2px 32px gold;
+}
+#playerScore {
+    font-family: fantasy;
+    color:white;
+    text-shadow: 1px 2px 32px gold;
+}
+#computerScore {
+    font-family: fantasy;
+    color:white;
+    text-shadow: 1px 2px 32px gold;
 }
